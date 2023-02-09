@@ -30,14 +30,13 @@ export default function Page0204() {
   const onClickSignup = () => {
     if (!email) {
       setEmailError("이메일이 올바르지 않습니다. ");
-    } else if (email.includes("@") !== true) {
-      setEmailError("@가 없습니다.");
     }
     if (!password) {
       setPasswordError("비밀번호를 입력해주세요.");
     }
-
-    if (password !== passwordConfirm) {
+    if (email.includes("@") !== true) {
+      setEmailError("@가 없습니다.");
+    } else if (password !== passwordConfirm) {
       setPasswordConfirmError("비밀번호 틀림");
     } else if (email && password && passwordConfirm) {
       setSubmitMessage("완료");
