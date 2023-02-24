@@ -15,7 +15,7 @@ const FETCH_PRODUCTS = gql`
   }
 `;
 const DELETE_PRODUCT = gql`
-  mutation ($productId: ID) {
+  mutation deleteProduct($productId: ID) {
     deleteProduct(productId: $productId) {
       message
     }
@@ -30,12 +30,12 @@ const Column = styled.div`
 export default function Page07() {
   const [deleteProduct] = useMutation(DELETE_PRODUCT);
   const { data } = useQuery(FETCH_PRODUCTS);
-  console.log(data?.fetchProducts);
   const onClickDelete = async (event) => {
     await deleteProduct({
-      variables: { productId: event.target._id },
+      variables: { productId: event._id },
       refetchQueries: [{ query: FETCH_PRODUCTS }],
     });
+    console.log(event.target._id);
   };
   return (
     <>
