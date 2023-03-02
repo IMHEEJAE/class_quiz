@@ -1,4 +1,4 @@
-import ProductRegistContainer from "@/src/components/08/regist/ProductRegist.container";
+import ProductRegistContainer from "../../../../src/components/08/regist/ProductRegist.container";
 
 export default function ProductEdit() {
   return (

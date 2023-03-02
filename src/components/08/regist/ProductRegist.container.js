@@ -35,6 +35,7 @@ export default function ProductRegistContainer(props) {
         },
       },
     });
+    console.log(result.data.createProduct);
     console.log(result.data.createProduct._id);
     alert(result.data.createProduct.message);
     router.push(`./08/${result.data.createProduct._id}`);
@@ -53,7 +54,7 @@ export default function ProductRegistContainer(props) {
       },
     });
     alert(result.data.updateProduct.message);
-    console.log(result.data.updateProduct);
+    console.log(result.data);
   };
   return (
     <>
