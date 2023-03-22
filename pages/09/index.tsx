@@ -7,6 +7,7 @@ export default function Page09() {
   const [value, setValue] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [address, setAddress] = useState("");
+  const [count, setCount] = useState(0);
   const star = (value: any) => {
     setValue(value);
     // alert(value + "점입니다");
@@ -35,6 +36,9 @@ export default function Page09() {
     console.log(data.address);
     setIsModalOpen(false);
   };
+  const onClickCount = () => {
+    setCount((prev) => prev + 1);
+  };
   return (
     <>
       <Rate onChange={star} />
@@ -44,7 +48,7 @@ export default function Page09() {
       <Button type="primary" onClick={showModal}>
         주소모달
       </Button>
-      {address ?? ""}
+      선택한 주소 : {address ?? ""}
       {isModalOpen && (
         <Modal
           title="주소검색"
@@ -55,6 +59,9 @@ export default function Page09() {
           <DaumPostcodeEmbed onComplete={onCompleteAddressSearch} />
         </Modal>
       )}
+      <br />
+      <div>결과는: {count}</div>
+      <button onClick={onClickCount}>카운트실행!</button>
     </>
   );
 }
