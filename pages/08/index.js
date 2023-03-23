@@ -3,6 +3,6 @@ export default function ProductRegist() {
   return (
     <>
       <ProductRegistContainer isEdit={true} />
-      <DoubleRightOutlined />    </>
+    </>
   );
 }
