@@ -7,7 +7,7 @@ import {
 import { createUploadLink } from "apollo-upload-client";
 import { useRecoilState } from "recoil";
 import { accessTokenState } from "../store";
-
+import { withAuth } from "../../components/commons/hoc";
 const GLOBAL_STATE = new InMemoryCache();
 
 interface IApolloSettingProps {
@@ -32,3 +32,4 @@ export default function ApolloSetting(props: IApolloSettingProps) {
     </>
   );
 }
+// export default withAuth(ApolloSetting);
